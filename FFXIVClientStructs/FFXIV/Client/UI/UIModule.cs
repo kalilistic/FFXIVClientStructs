@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using System;
 using FFXIVClientStructs.Attributes;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.UI.Agent;
@@ -10,7 +11,7 @@ namespace FFXIVClientStructs.FFXIV.Client.UI
 {
     // Client::UI::UIModule
     //   Client::UI::UIModuleInterface
-    [StructLayout(LayoutKind.Explicit, Size = 0xE32D0)]
+    [StructLayout(LayoutKind.Explicit, Size = 0xE3320)]
     public unsafe partial struct UIModule
     {
         [FieldOffset(0x0)] public void* vtbl;
@@ -21,7 +22,8 @@ namespace FFXIVClientStructs.FFXIV.Client.UI
         [FieldOffset(0x20)] public void* unk;
         [FieldOffset(0x28)] public void* SystemConfig;
 
-        [FieldOffset(0xB8E80)] public RaptureAtkModule RaptureAtkModule; // note: NOT a pointer, the module's a member
+        [Obsolete("Use GetRaptureAtkModule", true)]
+        [FieldOffset(0xB8ED0)] public RaptureAtkModule RaptureAtkModule; // note: NOT a pointer, the module's a member
 
         /*
             dq 0                                    ; +0x30

@@ -44,6 +44,8 @@ namespace FFXIVClientStructs.FFXIV.Client.Game.Character
         [FieldOffset(0xDB0)] public fixed byte EquipSlotData[4 * 10];
         [FieldOffset(0xDD8)] public fixed byte CustomizeData[0x1A];
 
+        [FieldOffset(0x1620)] public Balloon Balloon;
+        
         //[FieldOffset(0x1840)] public void* VfxObject;
         //[FieldOffset(0x1848)] public void* VfxObject2;
         [FieldOffset(0x1870)] public void* Omen;
@@ -56,7 +58,7 @@ namespace FFXIVClientStructs.FFXIV.Client.Game.Character
 
         [FieldOffset(0x19B4)] public ushort CurrentWorld;
         [FieldOffset(0x19B6)] public ushort HomeWorld;
-        [FieldOffset(0x19C2)] public byte Icon;
+        [FieldOffset(0x19C2)] public byte OnlineStatus;
         [FieldOffset(0x19D9)] public byte ShieldValue;
         [FieldOffset(0x19DF)] public byte StatusFlags;
         [FieldOffset(0x19A8)] public uint CompanionOwnerID;
